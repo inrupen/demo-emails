@@ -1,0 +1,7 @@
+{   
+    "parser": "babel",
+    "arrowParens": "avoid",
+    "semi": false,
+    "tabWidth": 4,
+    "editor.formatOnSave": true
+}
