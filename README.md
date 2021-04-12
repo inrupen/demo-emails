@@ -1,6 +1,6 @@
-# project
+# Project
 
-
+Demo project - add and remove emails to a list.
 
 ## Building and running on localhost
 
@@ -22,4 +22,5 @@ To create a production build:
 npm run build
 ```
 
+Demo avaliable at http://project.nrupen.com/
 

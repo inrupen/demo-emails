@@ -1,15 +1,15 @@
 {
   "name": "project",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Add/remove list of emails",
+  "main": "index.html",
   "keywords": [],
   "author": "Nrupen Abnave",
-  "license": "ISC",
+  "license": "MIT",
   "scripts": {
     "clean": "if exist .parcel-cache rmdir .parcel-cache /q /s",
     "start": "parcel src/index.html --port 8000 --open",
-    "build": "parcel build src/index.html"
+    "build": "parcel build src/index.html --dist-dir build"
   },
   "dependencies": {},
   "devDependencies": {
@@ -19,5 +19,13 @@
     "parcel": "^2.0.0-beta.2",
     "prettier": "^2.2.1",
     "sass": "^1.32.8"
-  }
+  },
+  "app": "build/index.html",
+  "browserslist": [
+    "IE 11",
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Edge versions",
+    "last 2 Safari versions"
+  ]
 }

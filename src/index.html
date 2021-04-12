@@ -4,7 +4,7 @@
         <title>Project</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" />
-        <link rel="stylesheet" href="./styles/main.css" />
+        <link rel="stylesheet" href="./styles/main.scss" />
     </head>
     <body>
         <div id="app"></div>
@@ -12,16 +12,35 @@
             <div class="title">
                 Share <strong>Board name</strong> with others
                 <div class="input">
-                    <div id="emails-input"></div>
+                    <div id="emails-input-box"></div>
                 </div>
-            </div>
-            
-        
+            </div>        
             <div class="footer">
-                <button class="add-email"> Add email </button>
-                <button class="email-amount"> Get emails count </button>
+                <button id="add-email" type="button"> Add email </button>
+                <button id="email-count" type="button"> Get emails count </button>
             </div>
         </div>
-        <script src="./scripts/Emails.js"></script>
     </body>
+    <script src="./scripts/index.js"></script>
+    <script>
+
+        const emailCount = (node) => { alert(node.emails({ onlyValid: true }).length) }
+        const container = document.querySelector("#emails-input-box");
+        const emailsInput = new InputEmails(container, { onChange: (emails) => { console.log('List of emails:', emails) } });
+        emailsInput.setEmails(["project@miro.com"])
+
+        const addRandomEmail = () => {
+            return [
+                Math.random().toString(30).substring(2, 15),'@',
+                Math.random().toString(30).substring(2, 5),".com"
+            ].join('')
+        }
+        const addEmail = (node) => { node.addEmail(addRandomEmail()) }
+        
+        const addEmailButton = document.querySelector("#add-email")
+        addEmailButton.addEventListener('click', () => { addEmail(emailsInput) })
+
+        const emailAmountButton = document.querySelector("#email-count")
+        emailAmountButton.addEventListener('click', () => { emailCount(emailsInput) })
+    </script>
 </html>
