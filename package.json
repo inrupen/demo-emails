@@ -1,0 +1,22 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "Nrupen Abnave",
+  "license": "ISC",
+  "scripts": {
+    "clean": "if exist dist/bundle.js rmdir dist/bundle.js /q /s && if exist .parcel-cache rmdir .parcel-cache /q /s",
+    "start": "parcel src/index.html --port 8000 --open",
+    "build": "parcel build src/index.html"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.13.14",
+    "@babel/preset-env": "^7.13.12",
+    "@parcel/transformer-sass": "^2.0.0-beta.2",
+    "parcel": "^2.0.0-beta.2",
+    "prettier": "^2.2.1"
+  }
+}
